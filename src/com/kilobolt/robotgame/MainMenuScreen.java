@@ -21,10 +21,13 @@ public class MainMenuScreen extends Screen {
 		for (int i = 0; i < len; i++) {
 			TouchEvent event = touchEvents.get(i);
 			if (event.type == TouchEvent.TOUCH_UP) {
-
+				
+				//start button
+				//need to set bounding box correctly not sure how to figure this out easily.
 				if (inBounds(event, 50, 350, 250, 450)) {
 					game.setScreen(new GameScreen(game));
 				}
+				//options button (if needed)
 
 			}
 		}
@@ -38,6 +41,7 @@ public class MainMenuScreen extends Screen {
 		else
 			return false;
 	}
+	
 
 	@Override
 	public void paint(float deltaTime) {
